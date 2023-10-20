@@ -13,6 +13,7 @@ const (
 )
 
 func main() {
+	// определяем переменную с типом пустого интерфейса
 	var v interface{}
 
 	v = 42
@@ -45,13 +46,15 @@ func checkType(v interface{}) {
 }
 
 func checkTypeSprintf(v interface{}) {
+	// Получаем тип переменной
 	typ := fmt.Sprintf("%T", v)
 
+	// Выводим тип переменной
 	fmt.Println("Type Sprintf:", typ)
 }
 
 func checkTypeSwitch(v interface{}) {
-	switch v.(type) {
+	switch v.(type) { // Получаем тип переменной
 	case int:
 		fmt.Println("Type switch:", IntType)
 	case string:

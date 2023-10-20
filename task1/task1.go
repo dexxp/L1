@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Структура Human
 type Human struct {
 	name string
 	age int
@@ -9,10 +10,12 @@ type Human struct {
 	height int
 }
 
+// Метод отображения данных о Human
 func (h *Human) DisplayInfo() {
 	fmt.Printf("Name: %s\nAge:%d\nWeight: %d\nHeight: %d\n", h.name, h.age, h.weight, h.height)
 }
 
+// Структура Action, которая содержит структуру Human и встраивает в себя метод DisplayInfo
 type Action struct {
 	*Human
 }

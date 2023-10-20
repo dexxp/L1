@@ -12,11 +12,11 @@ func main() {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-
 		for i := 0; ; i++ {
 			fmt.Println(i)
 			time.Sleep(time.Millisecond * 400)
 
+			// если i == 5 то завершаем горутину
 			if i == 5 {
 				fmt.Println("Done!")
 				return
@@ -24,6 +24,7 @@ func main() {
 		}
 	}()
 
+	// Дожидаемся выполнения горутины
 	wg.Wait()
 
 	fmt.Println("Exit!")
